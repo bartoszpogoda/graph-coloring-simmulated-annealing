@@ -69,7 +69,7 @@ public class TimingDemo {
 
 	public static void main(String[] args) throws IOException {
 		InstanceFileReader instanceFileReader = new InstanceFileReader();
-		AbstractInstance instance = instanceFileReader.read(getPath("input/queen7_7.col"));
+		AbstractInstance instance = instanceFileReader.read(getPath("input/le450_15b.col"));
 
 		FitnessCalculator fitnessCalculator = new FitnessCalculator(instance);
 		Algorithm algorithm = new Algorithm(instance, fitnessCalculator);
@@ -82,7 +82,7 @@ public class TimingDemo {
 		algorithm.setIterationResultListener(listener);
 
 		listener.start();
-		ColoredVertexVector result = algorithm.execute(100000, 0.1, 0.01);
+		ColoredVertexVector result = algorithm.execute(10000, 0.1, 0.01);
 		listener.finish();
 
 	}
